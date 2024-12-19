@@ -1,0 +1,294 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=Yuji+Mai&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+:root {
+  --btn-color: #D6FD51;
+}
+
+body {
+  background-color: #1C1C1C;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
+  
+}
+/* Earse The Scrool Bar From Chrome */
+::-webkit-scrollbar {
+  display: none;
+}
+video:hover:-webkit-media-controls {
+  display: contents;
+}
+
+/* OnScroll-Start */
+
+@keyframes onscrollHeadersContent {
+  from {
+    opacity: 0.5;
+    transform: scale(0.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.onscrollHeadersContent {
+  animation: onscrollHeadersContent 1s ease-in;
+}
+
+@keyframes onScrollSections {
+  from {
+    opacity: 0.5;
+    transform: translateX(-100em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0em);
+  }
+}
+
+.onscroll-sections {
+  animation: onScrollSections ease;
+  animation-timeline: view();
+  animation-range: entry 0% cover 45%;
+}
+/* OnScroll-End */
+
+/* Scrollbar-Start */
+::-webkit-scrollbar {
+  background-color: transparent;
+}
+/* Scrollbar-End
+
+/* Nav-Start */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  padding-top: 1em;
+}
+
+/* My Lovely Button  */ 
+.input-group {
+  position: relative;
+ }
+ 
+ .input {
+  border: solid 1.5px #9e9e9e;
+  border-radius: 1rem;
+  background: none;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #f5f5f5;
+  transition: border 150ms cubic-bezier(0.4,0,0.2,1);
+ }
+ .user-label {
+  position: absolute;
+  left: 15px;
+  color: #e8e8e8;
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: 150ms cubic-bezier(0.4,0,0.2,1);
+ }
+ 
+ .input:focus ,input:valid{
+  outline: none;
+  border: 1.5px solid #D6FD51;
+ }
+ 
+ .input:focus ~ label , input:valid ~ label{
+  transform: translateY(-50%) scale(0.8);
+  background-color: #212121;
+  padding: 0 .2em;
+  color: #D6FD51;
+ }
+/* End */
+
+
+/* Nav */
+ul {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  font-weight: 400;
+}
+
+li > a {
+  font-size: 1.2em;
+}
+li > a:hover {
+  border-bottom: 0.2em #D6FD51 solid;
+  padding-bottom: 0.2em;
+}
+/* End */
+
+
+.btn {
+  width: 6em;
+  height: 2.5em;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  color: #212121;
+  border-radius: 0.6em;
+  transition: all 0.3s ;
+  font-size: larger;
+}
+
+.btn:hover {
+  background-color: #6c6968;
+  color: white;
+  
+}
+/* Nav-End */
+
+/* Footer-Start */
+footer {
+  height: 32vh;
+  align-items: center;
+  border-radius: 1em 1em 0 0;
+}
+
+p {
+  margin-top: 1em;
+  font-size: 1.1em;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400px;
+  color: white;
+  max-width: 22em;
+}
+
+.footerLinks {
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+.footerLinks:hover {
+  color: #D6FD51;
+}
+/* Footer-End */
+
+/* Error_Start */
+.error {
+  margin-top:4.5em;
+  margin-bottom: 0;
+  height: 100vh;
+  background-image: url("assets/404.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+/* Error_End */
+
+/* Login and Sign  --Start-- */
+.loginandSign-photo {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  background-image: url("assets/3.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 1em;
+  filter: contrast(80%);
+  margin: 50px;
+}
+/* Animation of Red Line */
+.running-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  animation: run-line 4s linear infinite;
+  border-radius: 1em;
+}
+
+@keyframes run-line {
+  0% {
+    border-color: #ff0000 transparent transparent transparent;
+  }
+  25% {
+    border-color: #ff0000 #ff0000 transparent transparent;
+  }
+  50% {
+    border-color: transparent #ff0000 #ff0000 transparent;
+  }
+  75% {
+    border-color: transparent transparent #ff0000 #ff0000;
+  }
+  100% {
+    border-color: #ff0000 transparent transparent transparent;
+  }
+}
+
+.btn-submit {
+  transition: all 0.3s;
+}
+.btn-submit:hover {
+  background-color: #6c6968;
+  color: #212121;
+  color: white;
+}
+/* Login-End */
+
+/* Home-Start */
+
+.header-btn {
+  font-size: 1.2em;
+}
+header {
+  position: relative;
+  height: 100vh;
+  line-height: 4em;
+}
+
+header img {
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 80%;
+}
+.main-heading {
+  font-weight: bold;
+  font-family: "DM Sans", sans-serif;
+  font-size: 4em;
+  text-transform: capitalize;
+}
+
+/* Section-one-Start */
+section {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1em;
+  animation: onScroll all;
+  animation-timeline: view("");
+  animation-range: entry 0% cover 30%;
+}
+
+.sectionImg {
+  width: 35%;
+  height: 100%;
+  border-radius: 2em;
+  filter: brightness(150%);
+}
+
+/* Section-one-End */
+
+/* Home-End */
+.input-group .input .option{
+  background: #93a752;
+  border:  0.5em;
+}
